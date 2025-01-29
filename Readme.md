@@ -12,8 +12,8 @@ To get started, follow these steps:
 
 2. **Clone the Repository**:
    ```sh
-   git clone https://github.com/yourusername/screen-text-copier.git
-   cd screen-text-copier
+   git clone https://github.com/alokg252/Text-Extractor.git
+   cd Text-Extractor
    ```
 
 3. **Install Dependencies**:
@@ -28,7 +28,7 @@ To get started, follow these steps:
 1. **Run the Tool**:
    - Execute the main script to start the text extraction process.
    ```sh
-   python TextEctractor.pyw
+   python TextExtractor.pyw
    ```
 
 2. **Capture a Screen Area**:
