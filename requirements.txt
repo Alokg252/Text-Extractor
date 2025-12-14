@@ -1,3 +1,5 @@
 pyautogui==0.9.54
 pytesseract==0.3.13
 pyperclip==1.9.0
+Pillow==10.1.0
+plyer==2.1.0
