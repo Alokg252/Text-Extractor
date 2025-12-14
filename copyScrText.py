@@ -16,8 +16,7 @@ def notify(title, message):
     )
 
 class ScreenCaptureApp:
-
-
+    color = "red"
     def __init__(self):
         self.root = tk.Tk()
         self.start_x = self.start_y = self.end_x = self.end_y = 0
@@ -40,13 +39,11 @@ class ScreenCaptureApp:
 
     def on_mouse_drag(self, event):
         """Update the rectangle as the mouse is dragged."""
-        self.end_x, self.end_y = event.x, event.y
         if self.rect_id:
             self.canvas.delete(self.rect_id)
         self.rect_id = self.canvas.create_rectangle(
-            self.start_x, self.start_y, self.end_x, self.end_y,
-            outline='red', width=2
-        )
+        self.start_x, self.start_y, event.x, event.y,
+        outline=self.color, width=3)
 
     def on_mouse_up(self, event):
         """Capture the selected area, extract text, and close the app."""
@@ -81,6 +78,8 @@ class ScreenCaptureApp:
 
     def start(self):
         """Start the fullscreen app."""
+
+            
         self.canvas = tk.Canvas(self.root, bg='black', highlightthickness=0)
         self.canvas.pack(fill=tk.BOTH, expand=True)
         self.root.mainloop()

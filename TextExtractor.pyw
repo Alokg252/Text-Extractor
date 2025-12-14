@@ -1,5 +1,4 @@
 import tkinter as tk
-import os
 import subprocess
 from copyScrText import notify
 
@@ -8,9 +7,26 @@ SCRIPT_PATH = r"copyScrText.py"  # Replace with the full path to your script
 
 class FloatingIcon:
     def __init__(self):
+        """
+        Initializes the FloatingIcon class.
+
+        Sets up a floating icon with the following properties:
+
+        - Removes the title bar
+        - Sets the size of the floating icon to 44x44
+        - Keeps the window on top
+        - Keeps the window on top with 20% opacity
+        - Sets the background color of the window to #ca5cdd
+        - Adds an icon with the text " Tx " and the color #110
+        - Binds mouse events for dragging
+        - Binds left-click to execute the program
+        - Exits the app when pressing the Escape key
+
+        :return: None
+        """
         self.root = tk.Tk()
         self.root.overrideredirect(True)  # Removes the title bar
-        self.root.geometry("44x44+1483+280")  # Set the size of the floating icon
+        self.root.geometry("44x44+1855+350")  # Set the size of the floating icon
         self.root.attributes("-topmost", True)  # Keeps the window on top
         self.root.attributes("-alpha", 0.2)  # Keeps the window on top
         self.root.configure(bg="#ca5cdd")  # Background color
@@ -45,7 +61,9 @@ class FloatingIcon:
         self.root.geometry(f"+{x}+{y}")
 
     def execute_program(self, event):
+
         """Executes the defined program."""
+
         try:
             # Run the script and wait for it to complete
             subprocess.run([PYTHON_EXECUTABLE, SCRIPT_PATH], check=True)
